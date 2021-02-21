@@ -1,6 +1,10 @@
 $(function() {
-    let id = new URLSearchParams(location.search).get('id')
+    // 文章详情(
 
+    // 获取文章id
+    let id = new URLSearchParams(location.search).get('id')
+        // 根据文章id查询文章的评论信息
+        // 评论列表
     function loadCommentList() {
         $.ajax({
             type: 'get',
@@ -31,7 +35,7 @@ $(function() {
 
     loadCommentList()
 
-
+    // 发表评论
     $('#comment-form').submit(function(e) {
         e.preventDefault()
         let fd = $(this).serialize()
@@ -41,6 +45,7 @@ $(function() {
             data: fd,
             success: function(res) {
                 if (res.status === 0) {
+                    // 发表评论成功
                     layer.msg(res.message)
                     $('#comment-form').get(0).reset()
                     loadCommentList()

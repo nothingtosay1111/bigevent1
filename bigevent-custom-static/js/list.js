@@ -1,19 +1,22 @@
 $(function() {
-    var total = 10;
+
+
+    var total = 10
 
     var params = {
-        pagenum: 1,
-        pagesize: 6
-    }
+            pagenum: 1,
+            pagesize: 6
+        }
+        // 列表内容
     var arr = [`
     <div class="kr_news_date">
       16 <span>08月</span>
     </div>
   `]
-
+        // 加载列表数据
     function loadList() {
         if (total !== 0 && arr.length >= total) {
-            return layer.msg('没有更多数据')
+            return layer.msg('没有更多数据了')
         }
         $.ajax({
             type: 'get',
@@ -44,6 +47,8 @@ $(function() {
     }
 
     loadList()
+
+    // 加载更多数据
     $('.kr_more').click(function() {
         params.pagenum += 1
         loadList()

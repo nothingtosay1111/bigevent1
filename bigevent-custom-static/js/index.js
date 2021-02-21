@@ -1,7 +1,8 @@
 $(function() {
     layui.use('carousel', function() {
+        // 轮播模块
+        var carousel = layui.carousel
 
-        var carousel = layui.carousel;
 
         function loadSwiperList() {
             $.ajax({
@@ -34,6 +35,7 @@ $(function() {
 
         loadSwiperList()
 
+        // 加载友情链接数据
         function loadLinkList() {
             $.ajax({
                 type: 'get',

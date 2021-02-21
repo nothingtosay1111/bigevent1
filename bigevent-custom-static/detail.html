@@ -275,15 +275,18 @@
         <div class="kr_panel">
           <h4><i class="sprites"></i>参与评论</h4>
           <div class="form">
-            <textarea placeholder="请输入您要评论的内容..."></textarea>
-            <div class="action">
-              <span class="word_count">0/1000</span><button>提交评论</button>
-            </div>
+            <form id="comment-form">
+              <input type="text" placeholder="请输入评论人姓名" name="uname" >
+              <textarea name="content" placeholder="请输入您要评论的内容..."></textarea>
+              <div class="action">
+                <span class="word_count">0/1000</span><button id="comment-btn">提交评论</button>
+              </div>
+            </form>
           </div>
           <p class="tips">请回复有价值的信息，无意义的评论将很快被删除，账号将被禁止发言。</p>
         </div>
-        <div class="kr_panel">
-          <h4><i class="sprites"></i>评论区</h4>
+        <div class="kr_panel" id="comment-list">
+          <!-- <h4><i class="sprites"></i>评论区</h4>
           <div class="kr_comment_card">
             <div class="img-wrap">
               <img src="./uploads/avatar_3.jpg" alt="">
@@ -313,7 +316,7 @@
               <p>该犯罪还是属于犯罪 改变不了犯罪的事实 改抓抓 该判判</p>
             </div>
             <a href="javascript:;" class="like">72</a>
-          </div>
+          </div> -->
         </div>
         <div class="kr_panel">
           <h4><i class="sprites"></i>您可能也喜欢这些文章</h4>
@@ -501,6 +504,8 @@
     </div>
   </div>
   <script src="./assets/jquery/jquery-3.5.1.min.js"></script>
+  <script src="./assets/layui/lay/modules/layer.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/detail.js"></script>
 </body>
 </html>
